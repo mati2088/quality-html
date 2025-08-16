@@ -279,14 +279,51 @@
         }
 
         .course-price {
-            font-size: 2rem;
-            color: #667eea;
-            font-weight: bold;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .price-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
             margin-bottom: 1rem;
         }
 
-        .course-price.disabled {
+        .price-old {
+            font-size: 1.2rem;
             color: #999;
+            text-decoration: line-through;
+            text-decoration-thickness: 2px;
+            font-weight: 500;
+        }
+
+        .price-current {
+            font-size: 1.6rem;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .price-current.disabled {
+            color: #999;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-5px); }
+            60% { transform: translateY(-3px); }
         }
 
         .course-details {
@@ -644,8 +681,8 @@
                 font-size: 1.3rem;
             }
             
-            .course-price {
-                font-size: 1.8rem;
+            .price-current {
+                font-size: 1.4rem;
             }
             
             .about-features {
@@ -702,7 +739,11 @@
                     <div class="course-card">
                         <div class="course-level">Básico</div>
                         <h3 class="course-title">Fundamentos de QA Testing</h3>
-                        <div class="course-price">$45,000 ARS</div>
+                        <div class="price-container">
+                            <div class="price-old">Antes: $80,000 ARS</div>
+                            <div class="price-current">Ahora: $45,000 ARS</div>
+                            <div class="discount-badge">44% de descuento</div>
+                        </div>
                         <div class="course-details">
                             <p><strong>📅 Duración:</strong>8 semanas</p>
                             <p><strong>🚀 Inicio:</strong> 15 de Septiembre 2025</p>
@@ -735,7 +776,11 @@
                     <div class="course-card">
                         <div class="course-level">Intermedio</div>
                         <h3 class="course-title">QA Testing Avanzado</h3>
-                        <div class="course-price">$65,000 ARS</div>
+                        <div class="price-container">
+                            <div class="price-old">Antes: $120,000 ARS</div>
+                            <div class="price-current">Ahora: $65,000 ARS</div>
+                            <div class="discount-badge">46% de descuento</div>
+                        </div>
                         <div class="course-details">
                             <p><strong>📅 Duración:</strong> 12 semanas</p>
                             <p><strong>🚀 Inicio:</strong> 1 de Octubre 2025</p>
@@ -766,7 +811,9 @@
                     <div class="course-card disabled">
                         <div class="course-level disabled">Experto</div>
                         <h3 class="course-title disabled">QA Lead & Automation Expert</h3>
-                        <div class="course-price disabled">$120,000 ARS</div>
+                        <div class="price-container">
+                            <div class="price-current disabled">$120,000 ARS</div>
+                        </div>
                         <div class="course-details disabled">
                             <p><strong>📅 Duración:</strong> 16 semanas</p>
                             <p><strong>🚀 Inicio:</strong> 15 de Octubre 2025</p>
